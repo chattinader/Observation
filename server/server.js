@@ -11,6 +11,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Cross Origin Ressources
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -27,7 +28,7 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-// connexion à la base
+// Connexion à la base distante MongoDB Atlas
 app.get('/api/connection', function (req, res) {
     mongoDBModule.connexionMongo(function (err, db) {
         let reponse;
@@ -43,5 +44,24 @@ app.get('/api/connection', function (req, res) {
             }
         }
         res.send(JSON.stringify(reponse));
+    });
+});
+
+// Récupération des cas
+app.get('/api/cas', function (req, res) {
+    let page = parseInt(req.query.page || 1);
+    let pagesize = parseInt(req.query.pagesize || 10);
+    let name = req.query.name || '';
+
+    mongoDBModule.findCasPub(page, pagesize, name, function (data, count) {
+        var objdData = {
+            msg: "Cas_Pub recherchés avec succès",
+            data: data,
+            count: count,
+            page: page,
+            pagesize: pagesize
+        }
+        
+        res.send(JSON.stringify(objdData));
     });
 });
