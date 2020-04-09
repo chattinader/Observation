@@ -50,7 +50,7 @@ app.get('/api/connection', function (req, res) {
 // Récupération des cas
 app.get('/api/cas', function (req, res) {
     let page = parseInt(req.query.page || 1);
-    let pagesize = parseInt(req.query.pagesize || 10);
+    let pagesize = parseInt(req.query.pagesize || 5);
     let name = req.query.name || '';
 
     mongoDBModule.findCasPub(page, pagesize, name, function (data, count) {
@@ -61,7 +61,26 @@ app.get('/api/cas', function (req, res) {
             page: page,
             pagesize: pagesize
         }
-        
+
+        res.send(JSON.stringify(objdData));
+    });
+});
+
+// Récupération des temoignages
+app.get('/api/temoignages', function (req, res) {
+    let page = parseInt(req.query.page || 1);
+    let pagesize = parseInt(req.query.pagesize || 5);
+    let name = req.query.name || '';
+
+    mongoDBModule.findTemPub(page, pagesize, name, function (data, count) {
+        var objdData = {
+            msg: "Temoignages_Pub recherchés avec succès",
+            data: data,
+            count: count,
+            page: page,
+            pagesize: pagesize
+        }
+
         res.send(JSON.stringify(objdData));
     });
 });
