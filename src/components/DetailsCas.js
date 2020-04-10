@@ -5,6 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import { Link } from 'react-router-dom';
 
 export default class DetailsCas extends Component {
 
@@ -32,8 +33,36 @@ export default class DetailsCas extends Component {
             });
     }
 
+    getTemoignagesByCasId(id) {
+        fetch('http://localhost:8080/api/casTemoignages/' + id)
+            .then(response => {
+                return response.json();
+            })
+            .then(res => {
+                this.setState({
+                    temoignages: res.temoignage
+                })
+            }).catch(err => {
+                console.log("Erreur dans le get: " + err)
+            });
+    }
+
+    renderListTemData() {
+        return this.state.temoignages.map((el, index) => {
+            const { _id, obs_chrono } = el
+            return (
+                <ListItem key={_id}>
+                    <Link to={`/observation/temoignage/` + _id} style={{ textDecoration: 'none', color: 'black' }}>
+                        <ListItemText primary={"Témoignage N° " + (index + 1)} secondary={"Observé le: " + obs_chrono} />
+                    </Link>
+                </ListItem>
+            )
+        })
+    }
+
     componentDidMount() {
         this.getCasById(this.props.match.params._id);
+        this.getTemoignagesByCasId();
     }
 
     render() {
@@ -70,9 +99,7 @@ export default class DetailsCas extends Component {
                             <ListItem>
                                 <ListItemText primary="Document(s)" secondary="0" />
                             </ListItem>
-                            <ListItem>
-                                <ListItemText primary="Nb Temoignages" secondary={this.state.cas.cas_temoignages_nb} />
-                            </ListItem>
+                            {this.renderListTemData()}
                         </List>
                     </Paper>
                 </Grid>
