@@ -31,6 +31,10 @@ export default class Observation extends Component {
         })
     }
 
+    handleDetailRow(_id) {
+        this.props.history.push('/observation/cas/' + _id);
+    }
+
     render() {
         return (
             <div style={{ margin: "50px 50px 0px 50px" }}>
@@ -70,6 +74,7 @@ export default class Observation extends Component {
                         })
                     }
                     title="Résultats"
+                    onRowClick={(event, rowData) => { this.handleDetailRow(rowData._id) }}
                 />
             </div>
         );
