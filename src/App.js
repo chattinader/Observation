@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Observation from './components/Observation'
 import DetailsCas from "./components/DetailsCas";
+import DetailsTemoignage from './components/DetailsTemoignages'
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     <Route path="/" exact component={Home} />
                     <Route path="/observation/" exact component={Observation} />
                     <Route path="/observation/cas/:_id" exact component={DetailsCas} />
+                    <Route path="/observation/temoignage/:_id" exact component={DetailsTemoignage} />
                 </Switch>
             </div>
         </Router>

@@ -34,7 +34,6 @@ app.get('/api/connection', function (req, res) {
         let reponse;
 
         if (err) {
-            console.log("erreur connexion");
             reponse = {
                 msg: "erreur de connexion err=" + err
             }

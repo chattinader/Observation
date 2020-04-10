@@ -23,7 +23,6 @@ exports.countCasPub = function (name, callback) {
     MongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
-        console.log("db " + db)
         if (!err) {
             if (name == '') {
                 db.collection('cas_pub')
@@ -47,7 +46,6 @@ exports.findCasPub = function (page, pagesize, name, callback) {
     MongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
-        console.log("db " + db)
         if (!err) {
             if (name == '') {
                 db.collection('cas_pub')
@@ -89,7 +87,6 @@ exports.countCasPub = function (name, callback) {
     MongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
-        console.log("db " + db)
         if (!err) {
             if (name == '') {
                 db.collection('temoignages_pub')
@@ -154,7 +151,6 @@ exports.findTemPub = function (page, pagesize, name, callback) {
     MongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
 
-        console.log("db " + db)
         if (!err) {
             if (name == '') {
                 db.collection('temoignages_pub')
@@ -240,7 +236,6 @@ exports.findTemoignageByCasId = function (id, callback) {
         if (!err) {
             // La requete mongoDB
             let myquery = { "id_cas": parseInt(id) };
-            console.log(myquery)
             db.collection("temoignages_pub").find(myquery).toArray(function (err, data) {
                 let reponse;
 
