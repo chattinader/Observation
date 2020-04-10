@@ -232,3 +232,43 @@ exports.findTemoignageById = function (id, callback) {
         }
     });
 }
+
+exports.findTemoignageByCasId = function (id, callback) {
+    MongoClient.connect(url, function (err, client) {
+        var db = client.db(dbName);
+        if (!err) {
+            // La requete mongoDB
+            let myquery = { "id_cas": parseInt(id) };
+            console.log(myquery)
+            db.collection("temoignages_pub").find(myquery).toArray(function (err, data) {
+                let reponse;
+
+                if (!err) {
+                    reponse = {
+                        succes: true,
+                        temoignage: data,
+                        error: null,
+                        msg: "Details du cas filtré envoyés"
+                    };
+                } else {
+                    reponse = {
+                        succes: false,
+                        temoignage: null,
+                        error: err,
+                        msg: "erreur lors du find"
+
+                    };
+                }
+                callback(reponse);
+            });
+        } else {
+            let reponse = reponse = {
+                succes: false,
+                temoignage: null,
+                error: err,
+                msg: "erreur de connexion à la base"
+            };
+            callback(reponse);
+        }
+    });
+}
