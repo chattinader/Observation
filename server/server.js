@@ -94,3 +94,13 @@ app.get('/api/temoignages', function (req, res) {
         res.send(JSON.stringify(objdData));
     });
 });
+
+// Récupération d'un temoignage avec son id
+app.get('/api/temoignages/:id', function (req, res) {
+    var id = req.params.id;
+
+    mongoDBModule.findTemoignageById(id, function (data) {
+        res.send(JSON.stringify(data));
+    });
+
+});

@@ -190,3 +190,45 @@ exports.findTemPub = function (page, pagesize, name, callback) {
         }
     });
 };
+
+exports.findTemoignageById = function (id, callback) {
+    MongoClient.connect(url, function (err, client) {
+        var db = client.db(dbName);
+        if (!err) {
+            // La requete mongoDB
+
+            let myquery = { "_id": ObjectId(id) };
+
+            db.collection("temoignages_pub")
+                .findOne(myquery, function (err, data) {
+                    let reponse;
+
+                    if (!err) {
+                        reponse = {
+                            succes: true,
+                            temoignage: data,
+                            error: null,
+                            msg: "Details du temoignage envoyés"
+                        };
+                    } else {
+                        reponse = {
+                            succes: false,
+                            temoignage: null,
+                            error: err,
+                            msg: "erreur lors du find"
+
+                        };
+                    }
+                    callback(reponse);
+                });
+        } else {
+            let reponse = reponse = {
+                succes: false,
+                temoignage: null,
+                error: err,
+                msg: "erreur de connexion à la base"
+            };
+            callback(reponse);
+        }
+    });
+}
