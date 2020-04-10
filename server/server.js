@@ -66,6 +66,16 @@ app.get('/api/cas', function (req, res) {
     });
 });
 
+// Récupération d'un cas avec son _id
+app.get('/api/cas/:id', function (req, res) {
+    var id = req.params.id;
+
+    mongoDBModule.findCasById(id, function (data) {
+        res.send(JSON.stringify(data));
+    });
+
+});
+
 // Récupération des temoignages
 app.get('/api/temoignages', function (req, res) {
     let page = parseInt(req.query.page || 1);

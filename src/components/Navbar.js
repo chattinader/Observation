@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import HomeIcon from '@material-ui/icons/Home';
+import { Link } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 
 export default class Navbar extends Component {
@@ -27,7 +28,9 @@ export default class Navbar extends Component {
                   aria-label="open drawer"
                   style={{ marginRight: 5 }}
                 >
-                  <HomeIcon />
+                  <Link to={`/`} style={{ textDecoration: 'none', color: 'white' }}>
+                    <HomeIcon />
+                  </Link>
                 </IconButton>
               </Grid>
               <Grid item xs={8}>

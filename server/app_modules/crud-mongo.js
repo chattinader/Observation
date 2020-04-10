@@ -1,4 +1,5 @@
 var MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectID;
 var assert = require('assert');
 
 // URL de connexion
@@ -106,6 +107,47 @@ exports.countCasPub = function (name, callback) {
         }
     });
 };
+
+// Récupération d'un cas avec son _id
+exports.findCasById = function (id, callback) {
+    MongoClient.connect(url, function (err, client) {
+        var db = client.db(dbName);
+        if (!err) {
+            // La requete mongoDB
+            let myquery = { "_id": ObjectId(id) };
+
+            db.collection("cas_pub")
+                .findOne(myquery, function (err, data) {
+                    let reponse;
+
+                    if (!err) {
+                        reponse = {
+                            succes: true,
+                            cas: data,
+                            error: null,
+                            msg: "Details du cas envoyés"
+                        };
+                    } else {
+                        reponse = {
+                            succes: false,
+                            cas: null,
+                            error: err,
+                            msg: "erreur lors du find"
+                        };
+                    }
+                    callback(reponse);
+                });
+        } else {
+            let reponse = reponse = {
+                succes: false,
+                cas: null,
+                error: err,
+                msg: "erreur de connexion à la base"
+            };
+            callback(reponse);
+        }
+    });
+}
 
 // Récupération des temoignages
 exports.findTemPub = function (page, pagesize, name, callback) {
