@@ -191,12 +191,12 @@ exports.findTemPub = function (page, pagesize, name, callback) {
     });
 };
 
+// Récupération des temoignages
 exports.findTemoignageById = function (id, callback) {
     MongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
         if (!err) {
             // La requete mongoDB
-
             let myquery = { "_id": ObjectId(id) };
 
             db.collection("temoignages_pub")
@@ -233,6 +233,7 @@ exports.findTemoignageById = function (id, callback) {
     });
 }
 
+// Récupération d'un temoignage avec son _id
 exports.findTemoignageByCasId = function (id, callback) {
     MongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);

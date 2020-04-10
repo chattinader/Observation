@@ -95,7 +95,7 @@ app.get('/api/temoignages', function (req, res) {
     });
 });
 
-// Récupération d'un temoignage avec son id
+// Récupération d'un temoignage avec son _id
 app.get('/api/temoignages/:id', function (req, res) {
     var id = req.params.id;
 
