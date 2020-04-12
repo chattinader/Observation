@@ -49,7 +49,8 @@ export default class Observation extends Component {
                     data={query =>
                         new Promise((resolve, reject) => {
                             let url = 'http://localhost:8080/api/cas'
-                                + '?pagesize=' + query.pageSize
+                                + '?form=' + JSON.stringify(queryString.parse(this.props.match.params.params))
+                                + '&pagesize=' + query.pageSize
                                 + '&page=' + (query.page + 1)
                             fetch(url)
                                 .then(response => response.json())
