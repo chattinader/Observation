@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MaterialTable from "material-table";
+const queryString = require('query-string');
 
 export default class Observation extends Component {
     constructor(props) {
@@ -48,7 +49,7 @@ export default class Observation extends Component {
                     ]}
                     data={query =>
                         new Promise((resolve, reject) => {
-                            let url = 'http://localhost:8080/api/cas'
+                            let url = 'http://localhost:8080/api/filteredCas'
                                 + '?form=' + JSON.stringify(queryString.parse(this.props.match.params.params))
                                 + '&pagesize=' + query.pageSize
                                 + '&page=' + (query.page + 1)

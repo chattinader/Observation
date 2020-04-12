@@ -75,6 +75,25 @@ app.get('/api/cas/:id', function (req, res) {
 
 });
 
+// Récupération des cas après filtrage
+app.get('/api/filteredCas', function (req, res) {
+    let form = JSON.parse(req.query.form);
+    let page = parseInt(req.query.page || 1);
+    let pagesize = parseInt(req.query.pagesize || 10);
+    let name = req.query.name || '';
+
+    mongoDBModule.findFilteredCas(form, page, pagesize, name, function (data, count) {
+        var objdData = {
+            msg: "Cas_Pub filtrés recherchés avec succès",
+            data: data,
+            count: count,
+            page: page,
+            pagesize: pagesize
+        }
+        res.send(JSON.stringify(objdData));
+    });
+});
+
 // Récupération des temoignages
 app.get('/api/temoignages', function (req, res) {
     let page = parseInt(req.query.page || 1);
