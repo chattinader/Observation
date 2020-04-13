@@ -259,6 +259,38 @@ exports.countCasByRegion = function (regions, callback) {
     });
 }
 
+// Count des cas par classe
+exports.countCasByClasse = function (classes, callback) {
+    MongoClient.connect(url, function (err, client) {
+        var db = client.db(dbName);
+        var counts = []
+        if (!err) {
+
+            classes.forEach(classe => {
+                let myquery = { "cas_classification": classe }
+                db.collection('cas_pub')
+                    .count(myquery)
+                    .then(rep => {
+                        let calc = Math.round((rep / 2768) * 100);
+                        counts.push(calc)
+                        if (counts.length === 4) {
+                            callback(rep, counts)
+                        }
+                    })
+            })
+
+        } else {
+            let reponse = {
+                succes: false,
+                cas: null,
+                error: err,
+                msg: "erreur de connexion à la base"
+            };
+            callback(reponse);
+        }
+    });
+}
+
 // Récupération des temoignages
 exports.findTemPub = function (page, pagesize, name, callback) {
     MongoClient.connect(url, function (err, client) {

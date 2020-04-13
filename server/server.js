@@ -97,12 +97,23 @@ app.get('/api/filteredCas', function (req, res) {
 // Count des cas par région
 app.get('/api/countRegion', function (req, res) {
     let regions = req.query.regions.split(',');
-    console.log(regions)
-
 
     mongoDBModule.countCasByRegion(regions, function (data, count) {
         var objdData = {
             msg: "Cas_Pub count regions recherchés avec succès",
+            count: count
+        }
+        res.send(JSON.stringify(objdData));
+    });
+});
+
+// Count des cas par classe
+app.get('/api/countClasse', function (req, res) {
+    let classes = ["A", "B", "C", "D"]
+
+    mongoDBModule.countCasByClasse(classes, function (data, count) {
+        var objdData = {
+            msg: "Cas_Pub count cas par classe recherchés avec succès",
             count: count
         }
         res.send(JSON.stringify(objdData));
