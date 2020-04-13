@@ -10,19 +10,6 @@ export default class Statistiques extends Component {
                     'Phénomènes Non Identifiés (après enquête)'],
                 datasets: [
                     {
-                        label: 'Pourcentage',
-                        data: [
-                            22,
-                            40.5,
-                            34,
-                            3.5
-                        ],
-                        backgroundColor: [
-                            '#FF6384',
-                            '#36A2EB',
-                            '#FFCE56',
-                            '#48FD00',
-                        ]
                     }
                 ],
             },
@@ -72,8 +59,33 @@ export default class Statistiques extends Component {
                 })
     }
 
+    getCountbyClasse(){
+        let url = 'http://localhost:8080/api/countClasse'
+        fetch(url)
+            .then(response => response.json())
+            .then(res => {
+                this.setState({
+                    pieData: {
+                        datasets: [
+                            {
+                                label: 'Fréquence des cas',
+                                data: res.count,
+                                backgroundColor: [
+                                    '#FF6384',
+                                    '#36A2EB',
+                                    '#FFCE56',
+                                    '#48FD00',
+                                ]
+                            }
+                        ]
+                    }
+                })
+            })
+    }
+
     componentDidMount() {
         this.getCountbyRegion()
+        this.getCountbyClasse()
     }
 
     render() {
