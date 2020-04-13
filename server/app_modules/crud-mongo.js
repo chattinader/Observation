@@ -228,6 +228,33 @@ exports.findFilteredCas = function (form, page, pagesize, name, callback) {
     });
 }
 
+// Count des cas par région
+exports.countCasByRegion = function (region, callback) {
+    MongoClient.connect(url, function (err, client) {
+        var db = client.db(dbName);
+
+        if (!err) {
+            let myquery = { "cas_region": region }
+            db.collection("cas_pub")
+                .find(myquery)
+                .toArray()
+                .then(arr => {
+                    db.collection('cas_pub')
+                        .count(myquery)
+                        .then(rep => callback(arr, rep))
+                });
+        } else {
+            let reponse = reponse = {
+                succes: false,
+                cas: null,
+                error: err,
+                msg: "erreur de connexion à la base"
+            };
+            callback(reponse);
+        }
+    });
+}
+
 // Récupération des temoignages
 exports.findTemPub = function (page, pagesize, name, callback) {
     MongoClient.connect(url, function (err, client) {

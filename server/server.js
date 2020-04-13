@@ -94,6 +94,19 @@ app.get('/api/filteredCas', function (req, res) {
     });
 });
 
+// Count des cas par région
+app.get('/api/countRegion', function (req, res) {
+    let region = req.query.region;
+
+    mongoDBModule.countCasByRegion(region, function (data, count) {
+        var objdData = {
+            msg: "Cas_Pub count regions recherchés avec succès",
+            count: count
+        }
+        res.send(JSON.stringify(objdData));
+    });
+});
+
 // Récupération des temoignages
 app.get('/api/temoignages', function (req, res) {
     let page = parseInt(req.query.page || 1);
