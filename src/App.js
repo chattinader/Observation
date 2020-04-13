@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Home from './components/Home'
+import Home from './components/Search'
 import Observation from './components/Observation'
 import DetailsCas from "./components/DetailsCas";
 import DetailsTemoignage from './components/DetailsTemoignages'
