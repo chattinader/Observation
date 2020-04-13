@@ -7,6 +7,7 @@ import Observation from './components/Observation'
 import DetailsCas from "./components/DetailsCas";
 import DetailsTemoignage from './components/DetailsTemoignages'
 import Statistiques from "./components/Statistiques";
+import About from "./components/About";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/observation/cas/:_id" exact component={DetailsCas} />
                     <Route path="/observation/temoignage/:_id" exact component={DetailsTemoignage} />
                     <Route path="/statistique/" exact component={Statistiques} />
+                    <Route path="/about/" exact component={About} />
                 </Switch>
             </div>
         </Router>
