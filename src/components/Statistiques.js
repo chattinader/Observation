@@ -96,7 +96,7 @@ export default class Statistiques extends Component {
                      options={{
                          title: {
                              display: true,
-                             text: 'Répartition des cas d observations par type',
+                             text: 'Répartition des cas d observations par type en pourcentage',
                              fontsize: 25
                          },
                          legend: {
