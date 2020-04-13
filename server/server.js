@@ -96,7 +96,9 @@ app.get('/api/filteredCas', function (req, res) {
 
 // Count des cas par région
 app.get('/api/countRegion', function (req, res) {
-    let regions = req.query.region;
+    let regions = req.query.regions.split(',');
+    console.log(regions)
+
 
     mongoDBModule.countCasByRegion(regions, function (data, count) {
         var objdData = {
