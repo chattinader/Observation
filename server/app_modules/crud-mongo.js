@@ -229,22 +229,26 @@ exports.findFilteredCas = function (form, page, pagesize, name, callback) {
 }
 
 // Count des cas par région
-exports.countCasByRegion = function (region, callback) {
+exports.countCasByRegion = function (regions, callback) {
     MongoClient.connect(url, function (err, client) {
         var db = client.db(dbName);
-
+        var counts = []
         if (!err) {
-            let myquery = { "cas_region": region }
-            db.collection("cas_pub")
-                .find(myquery)
-                .toArray()
-                .then(arr => {
-                    db.collection('cas_pub')
-                        .count(myquery)
-                        .then(rep => callback(arr, rep))
-                });
+
+            regions.forEach(region => {
+                let myquery = { "cas_region": region }
+                db.collection('cas_pub')
+                    .count(myquery)
+                    .then(rep => {
+                        counts.push(rep)
+                        if (counts.length === 14) {
+                            callback(rep, counts)
+                        }
+                    })
+            })
+
         } else {
-            let reponse = reponse = {
+            let reponse = {
                 succes: false,
                 cas: null,
                 error: err,
