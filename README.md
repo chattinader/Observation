@@ -1,15 +1,34 @@
 # Observation
-## A propos
-![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAawAAAB2CAMAAACjxFdjAAAAolBMVEXh5O7///8JNXvm6PHo6vLt7/X29/oAJ3X8/P3z9Pjx8vcAMnkAJXT19vkALngAMHkAInOZpsM0T4na3+uvudAAKnYAH3IWPH9HX5OIl7gAIHLS1+Wfq8aRn74OOH3GzN1xg6pUZ5a7w9djdqKos8wAGXDByNo7V48AAGqCkbSyu9EeQoMAE24pSYdOZph5ia5ofKYACWxbcJ8bSIkoT4xte6MiSHcZAAAM0ElEQVR4nO2bC3uiuhZAuSTe3GkoDyMKAqKIMmAVx7b//6/dHd4+6lRrBadZ3zkzioCQlb2zExxJEggEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBIIHBKU73PY1CD4Jns6ErEdByHoghKwHQsh6IISsB0LIeiCErK+BELrfl/VSLgvf8Rvb5rat67rG8pbnOwNmYX/Wm69m8fKn+EJ+uETNm0WYc6VCZiqL+C4th9hUV8xdLyaauegPfkY6RPbvoToflL4QdrytZc2mg6vOxmRq2veQhV3FlGVt13OJDH8PZ+z8t6KM81seALTTqfrnZZvlEuzPhkTVJ2niX3UyZpK7RBaOhzKXtMO+zl/I5orVnyLck1hOsQH5ieEGDsL1Lk7gunCX1RZIJ+VBjVN1DZQO9cAZxFsIL4OosqzHUp4GnRPNjmry9zhPm8XH+cvDnfIDD9Mr38D/uFwu9jJXXBbqa9lLdVV/0WC7Xo0yKO85SLJXik6ITtZG8V04sExdUXRlNM1vEjFvUx400tzuRhwOid2DVnSwPYbb1sOytwUeQ3gvxDDzg0FBwO8IsuYuijbTkGUHsSjqQ4Mk1T5l14XzGNPZZhcHVTvAodA+q2iaXNo0yB/LlSyP5K/NefFNjjVWNU1TOXoK3cF5JZSqxFRlTbfyr7aHmqaoMoEBj/IrQoFGymNUdWh0Vxa/PxvuFCW8vypGnSuiibULG8HhTEfQG3OGES+bY5OY8MbUJ9lhjGoKjFmrYbGTrq9SPpogZ6cQeKeQseUXIemZhDePZo6jUyF87no3WiVLYiOav3lxsg/ZCgYzRY4sTuTBmVearKlbw5ubVDY3PNm7C9mMBo7j2yqlCnw7kzUYbddWThR2WBb0e2MKiVqG29aiurBiGiXT+i1aUpNSM7NAZc3CEt7qlESxl65NOoROLLFJVmD0qUyz3WB/MvIRckamZu5se0vBTmaLjzpUWVmRasqqfJktP0+CuSyUvJSysvOmEGmKK/XK9IxsAjflwEvsT6i8GMBeGtUiPmdBOCCyCuEZ6jId+cUx1yTmu4KZgbOEQgbVlSJnYepG050mqyM7CYA1BVkoXPBAhGbgTbSAfFLJohHfK7EnkHtGEuoPlYkPAxZmkaat+bmXY+gaCTQMmyqyedFKBIrNhizI4gvoE9owT4NMAVdJ43RoDfFUDEzBOFNjKLJS3GZvrspDhgxwtu19pQHvCyqG6roUcjbudFWPMSiGO9pAjQ/gfiZrTdVipMAgAUKtksU/5ftJkSYrHrM9L89+yBnKOozfeG7KxM+O7e1UWfEv6MzY0kpZEcrOCQXFLO9VKNFlbdNsdrbggopb6Gt0LWH4Qr0ogjCU/soA88has/ySOx5WOSxLLqS2A9UF9Pta1iutVKJMB6QjUqR37JnymKGGrGJkclSeWXndl9ODmNxAAp1QrQgntNRlcsmQzmMlh8r5hnrRidcbxGuWnFCMVFM/DHFkMgQdSHMLUug0HmYq5PXR1PagVwV/mbJ1ARRkMxatL+1dax1oILOMo1wWn5ASGKY5DBKJHhzLkjAUAyQ7BLNsR0ujK8iXpmyWbYqIfNlMupIlj4OD45BtykqzPuC3RdyGLJVlKYQUJRAfVW2EEl7tmIQoUOGPjM6vh6CBkk9Y+v7JTIAgjqo2zWXxQY5qOdB+enJKFnTdoQMRZkdl2UZHDDmkjiasXSYL98s0WPee6ipBFnEPZRnHskaTChW+HK5v87YCVFWmiw7Ps3J4ts8HAjJzfaek/pznE+9IlqlU/AlPyYq5LOxqRFWg28LM5uuyYMwpUQ5CC4VQrkyb9cWxLB7sil8tVxQLFpDze1AOOnBybd310EJVQQy69IKFVV82lAbqtkyDb2UaNPyaE2NWPprDDI5qa5fv42zVr8ri1VwJndRVf1ZsQJeitLn0dEIWBLsZf1D7IQdKzUXXZUlS3V8rzLheIEITSkfl676WFxgHBe9xgcGgQde9DRiCxuTF1tT8qiyJNa5U05JeZgmzLMh6kONUS8LlatepNOgvICTDXnNJrHqNl9ATSOdl4Zl2JGsYSPayuHJoZtnc4rwJskodvWn5TVfnOCjdoQl3MIbEvUijb1mbSreQhWNSXyLVZ4nDmO9pWcrOlmFUmho5wQlZ8BefOFtesY8Hn7jFayOGElPt/gNoPo0/gK6gyDZSqZgijWF6GYVZMstih0+KZbILg2VOU1bk8P3cvilTk+GYjyRZY95CFtSDzX6lKXQ0Ib/dchIx5ktHJGOR4hOyJMnSoVQv9iG/+WxAL97wNRrzukcOdwWtD0NL50UwDlZBPuEMdZigwP0ANJuQ4ngISaeogscUNZeb+F68nFBJAtv7CmwY8XJr8uUCg/cbsn+plOpVVcFX1MeklvWHvFTftBuSIZeF7FVe7lSy6tXMyfzCpcpWQMsx3WsCc4d9ia+pvaRZqoNmIMUt5rIkPIjMsk/qMkgh2ZNiLivfqJgbvk6BWLwqqhZoDw1kveh1Ew71lwsjC/kjc0/WOG2sYWbPqjIgDTqGa5TrIyiBN/kryR8Y5U7wPhkkOYHPHmMNA7t60xaJwF86DR3JGlssH8Wd0MtY02KpBzlJuRjAwxD+gmzYp7RvZPuFTjniSX4SlsD7IAjKaQFqvP4siM2HVZmhKZOD5/qHtUNz++Eu+wXG4zw8xslIqdbdhltev2EnVv8Qaq6KtdD8ESJfCoyKeu/opqWiwMieNTafPh7s2PzkimtdzhUdUjLEct+QHqaJbwiSvP6C5zV9uAnKORUOppPhYt1sDzTKVvg+ojHP+kYwClw79QYO7nzx9k3AHD5xPSNpZm6EkZ/lrmoDX83Yti0rC0n8QInrO8ha4Gjb3o8n+LLEmcep95Il+JjyxzEOTCq11ZkdH1pWh3/bdAEotjYc/iSeDs/9zKVTsvhCSvFn9ZMsqZjn51vL8iTbYePkr6oPG8cV52oe01VgSpnNG6EEUybJuUF9bZKoMzfzOgm0jTt9t7XXWE49auNgFLrhemCO4sSi/iKJfV16w/xpd/Bmv9qv2nbreqvJkljuKEXYGgX0lQ0Hb6ZnSS/O3A/MXTzp8i+gJP4U9r1g6p7vWOn7+31+RP13kP8euBvHVWYs9g1j5dkMBX/mYbxicz82Nm74MreNkd8HWdYgdWNPcqbO3LU3YWo5aQrzaXngWHE88ti8F/mTcO4nczYzur7MgfAnf/5z1S83vweQJQX9xJ3/YenSVW1v56Bgs0gsK5gvM1lz4s1nbtQDWUnai+eO/+5vQ3szmPZDNJ1jtFwPRqmx2bEdtrzddOsEUcBmd/mV+E/DWUdG3/WS32y69LzIm4c4SS2vn8bzIHX7s8H7NIatkc1wf2b30m3iv7P1zHjbuGtjmr5h1t951n/ndt/f4QhezlPDCnfp4TNqwQ1Ag5C5oc8Sacl8Z+C7CXKW/jKQgsBZOoErBU4QoCRxGewpSb4bsAAnrhQmkusyyHZo6UoJGuDEgd3gr8D13YHj/RtFY9dAqFH1lWtdxUdlVZhvL/8vjin+K4s/VJ0Loc4XgwKBQCD4APQJ2r7Gf59iLD2k+FfH1cvPcnS0UHoVB07yJ4xH9G7NKaENlW23Smc4jJRPKHk64FeDw89O73W023mNbbdRe9TBc07NfitXTf3M/2/y3+vZO09x7tzjvs3eA/2DqVuAighqJLV9Nb1aTOakknKqlf93ez6SyRU+/2q7+b6fOrmhE35KN0+NcPm7kf98Kx96bLspv4szhgo/T2XwnDHzvVIupu1GvS3FOHRsqPDzdOin026OaLt5b8N+obCnKM9wHwhqu/UvpO1m/hKnHdUFQj3+PK6gJm2391XkRd2+o7qIqxT9E4KatN3uF4Hy3yujE46efx1FUdtNe3vabv/Pkf8jQXQQSTAa8QnIv66opm0Nf6ExKO1JqiuGH+Coom0bH4COLJWRVEj6CYF0RNtWjvnA0k+WVNK2mgYHlsrKIbf0oyWVtG0oo9L0cSy13U6doAOeDjTxcUlYOkmLkgpPwtKnacvTvqZitiQsnefuorDQdDX3s3QUTc9C04XcR1QVTiKavsL3Wjrw9CQ0fYlv81QsvBZpryr1hKYv8E2ecNOT0HQjbu8JVWnv15PwdFNu6amZ9gpPQtMtuZWpuowoi3Lh6ebc1FM5PglP38OXNO15eq48tX1P/yxXepLqEQpEPYt4ugtfDCiR9+7JNaLyik94ujtfDqi2b+AncYUoUZi3xWdEIRFQ3eAvpoqA4ivmz2VEtX3JP5fPZD4RUB3hvCiR+TrFCVMHokQp0Rk+GqPy1VjhqVN8IEpkvi4iRD0Q9QpSNkYJUV1GEqIeB6maRwlRnUcSoh4HSawgPQ6SEPU4/B88vnMmU18qiAAAAABJRU5ErkJggg==)
+## Description
+![](https://lh3.googleusercontent.com/eBEGw6seysuIue_-wdYJ8SpGb3H69AFK8ZnTtkTGc17ESdfyjFkO3g_PFVmDEG-13YrGPg=s170)
 
-Le GEIPAN, Groupe d’Études et d’Information sur les Phénomènes Aérospatiaux Non Identifiés fait partie intégrante des missions du Centre National d'Études Spatiales (CNES).
+Le **GEIPAN**, Groupe d’Études et d’Information sur les Phénomènes Aérospatiaux Non Identifiés fait partie intégrante des missions du Centre National d'Études Spatiales (CNES).
 
 Il a pour charge la collecte des témoignages d’observations de PAN sur le territoire français mais pas que....
 
 ![](https://scontent.fcdg1-1.fna.fbcdn.net/v/t1.0-9/50539509_1264729240356913_5469609442360164352_n.jpg?_nc_cat=106&_nc_sid=85a577&_nc_ohc=rEX6Qy253akAX_w1qML&_nc_ht=scontent.fcdg1-1.fna&oh=a0d1fd9df3bc0cbadc157f8597164a3e&oe=5EBC3414)
 
-Dans le cadre du cursus MBDS et du module d'enseignement de Michel BUFFA, cette application REACT a été développée par Nader Chatti et Hamza JRAD.
+Dans le cadre du cursus **MBDS** et du module d'enseignement de **Michel BUFFA**, cette application REACT a été développée par **Nader CHATTI** et **Hamza JRAD**.
 
 Les données sur les témoignages ont été récupéré sur le site officiel de GEIPAN et stockées dans une base de données distante MongoDB Atlas.
 
 Vous trouverez dans cette application un formulaire permettant d'effectuer des recherches sur l'ensemble des témoignages ainsi qu'un dashboard dynamique contenant une bref analyse statistique de ceux-ci.
+
+-------------------------------------------------------
+
+## Lancement du projet
+_Le lancement du projet requière **NodeJS** et **Npm**_
+
+1. Base de donnée MongoDB
+    - Aucune action à faire pour la base de données car celle-ci est hébergée sur **MongoDB Atlas**
+
+2. Lancement du serveur
+    - Ouvrir un 1er terminal et aller dans le dossier du projet _./Observation/server_
+    - Executer la commande `npm install` (pour l'installation des packages nécessaires)
+    - Lancer le serveur avec la commande `node server.js` ou `nodemon server.js` 
+        - Il est possible d'avoir une erreur si vous n'avez pas nodemon installé sur votre machine, il faut donc executer la commande `npm install nodemon -g` et réessayer de relancer le serveur
+
+3. Lancement de l'application React
+    - Ouvrir un 2ème terminal et aller dans le dossier du projet _./Observation_
+    - Executer la commande `npm install` (pour l'installation des packages nécessaires)
+    - Lancer l'application avec la commande `npm start`, après chargement vous allez être redirigé vers la page _http://localhost:3030_ dans votre navigateur par défaut
