@@ -35,4 +35,4 @@ _Le lancement du projet requière **NodeJS** et **Npm**_
 3. Lancement de l'application React
     - Ouvrir un 2ème terminal et aller dans le dossier du projet _./Observation_
     - Executer la commande `npm install` (pour l'installation des packages nécessaires)
-    - Lancer l'application avec la commande `npm start`, après chargement vous allez être redirigé vers la page _http://localhost:3030_ dans votre navigateur par défaut
+    - Lancer l'application avec la commande `npm start`, après chargement vous allez être redirigé vers la page _http://localhost:3000_ dans votre navigateur par défaut

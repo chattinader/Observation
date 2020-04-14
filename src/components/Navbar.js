@@ -60,56 +60,56 @@ export default class Navbar extends Component {
                   <Grid item xs={7}>
                     <Tooltip title="Search" aria-label="Search
                     ">
-                        <IconButton
-                          edge="start"
-                          color="inherit"
-                          aria-label="open drawer"
-                          style={{ marginRight: 5 }}
-                        >
-                          <Link to={`/`} style={{ textDecoration: 'none', color: 'white' }}>
-                            <SearchTwoToneIcon />
-                          </Link>
-                        </IconButton>
-                    </Tooltip>
-
-                    <Tooltip title="Stats" aria-label="Stats">
-                    <IconButton
-                      edge="start"
-                      color="inherit"
-                      aria-label="open drawer"
-                      style={{ marginRight: 5 }}
-                    >
-                      <Link to={`/Statistique`} style={{ textDecoration: 'none', color: 'white' }}>
-                        <EqualizerIcon />
-                      </Link>
-                    </IconButton>
-                    </Tooltip>
-
-                    <Tooltip title="About" aria-label="About">
-                    <IconButton
-                      edge="start"
-                      color="inherit"
-                      aria-label="open drawer"
-                      style={{ marginRight: 5 }}
-                    >
-                      <Link to={`/About`} style={{ textDecoration: 'none', color: 'white' }}>
-                        <InfoIcon />
-                      </Link>
-                    </IconButton>
-                    </Tooltip>
-
-                    {this.state.back ? (
-                      <Tooltip title="Back" aria-label="Back">
                       <IconButton
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
                         style={{ marginRight: 5 }}
                       >
-                        <Link to={this.state.oldUrl} style={{ textDecoration: 'none', color: 'white' }}>
-                          <ArrowBackIcon />
+                        <Link to={`/`} style={{ textDecoration: 'none', color: 'white' }}>
+                          <SearchTwoToneIcon />
                         </Link>
                       </IconButton>
+                    </Tooltip>
+
+                    <Tooltip title="Stats" aria-label="Stats">
+                      <IconButton
+                        edge="start"
+                        color="inherit"
+                        aria-label="open drawer"
+                        style={{ marginRight: 5 }}
+                      >
+                        <Link to={`/Statistique`} style={{ textDecoration: 'none', color: 'white' }}>
+                          <EqualizerIcon />
+                        </Link>
+                      </IconButton>
+                    </Tooltip>
+
+                    <Tooltip title="About" aria-label="About">
+                      <IconButton
+                        edge="start"
+                        color="inherit"
+                        aria-label="open drawer"
+                        style={{ marginRight: 5 }}
+                      >
+                        <Link to={`/About`} style={{ textDecoration: 'none', color: 'white' }}>
+                          <InfoIcon />
+                        </Link>
+                      </IconButton>
+                    </Tooltip>
+
+                    {this.state.back ? (
+                      <Tooltip title="Back" aria-label="Back">
+                        <IconButton
+                          edge="start"
+                          color="inherit"
+                          aria-label="open drawer"
+                          style={{ marginRight: 5 }}
+                        >
+                          <Link to={this.state.oldUrl} style={{ textDecoration: 'none', color: 'white' }}>
+                            <ArrowBackIcon />
+                          </Link>
+                        </IconButton>
                       </Tooltip>
                       ) : (
                         <IconButton
@@ -127,9 +127,11 @@ export default class Navbar extends Component {
                 </Grid>
               </Grid>
               <Grid item xs={6}>
-                <Typography variant="h6" noWrap>
-                  Observation
-            </Typography>
+                <IconButton>
+                  <Typography variant="h6" noWrap style={{ color: 'white' }}>
+                    Observation
+                  </Typography>
+                </IconButton>
               </Grid>
             </Grid>
           </Toolbar>

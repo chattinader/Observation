@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import {Bar, Pie} from 'react-chartjs-2';
 
 export default class Statistiques extends Component {
     constructor(props) {
@@ -9,8 +9,7 @@ export default class Statistiques extends Component {
                 labels: ['Phénomènes Parfaitements Identifiés', 'Phénomènes Problablement Identifiés', 'Phénomènes Non Identifiables (manque de données)',
                     'Phénomènes Non Identifiés (après enquête)'],
                 datasets: [
-                    {
-                    }
+                    {}
                 ],
             },
             barData: {
@@ -31,8 +30,7 @@ export default class Statistiques extends Component {
                     "Outre-Mer"
                 ],
                 datasets: [
-                    {
-                    }
+                    {}
                 ]
             }
         }
